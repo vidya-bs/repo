@@ -1,0 +1,411 @@
+{
+  "id" : "6436a5457f825b0f7a7d56fb",
+  "cts" : 1681302853411,
+  "createdUserName" : "sridhar sri",
+  "mts" : 1681302853411,
+  "apiId" : "6436a5467f825b0f7a7d56fd",
+  "revisionId" : "6436a5467f825b0f7a7d56fc",
+  "name" : "api-monitoring",
+  "displayName" : "api monitoring",
+  "description" : "",
+  "apiRevision" : 1,
+  "apiVersion" : 1,
+  "protocols" : [ "https" ],
+  "serviceUrl" : "https://gcp-api.apiwiz.io",
+  "path" : "/itorix/v1/monitor",
+  "subscriptionKeyParameterNames" : {
+    "header" : "Ocp-Apim-Subscription-Key",
+    "query" : "subscription-key"
+  },
+  "subscriptionRequired" : false,
+  "contact" : {
+    "email" : "apiteam@swagger.io"
+  },
+  "license" : {
+    "name" : "Apache 2.0",
+    "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+  },
+  "termsOfServiceUrl" : "http://swagger.io/terms/",
+  "tags" : [ ],
+  "products" : [ ],
+  "isCurrent" : true,
+  "isOnline" : true,
+  "apiOperations" : [ {
+    "name" : "searchForEnvironment",
+    "displayName" : "searchForEnvironment",
+    "method" : "get",
+    "urlTemplate" : "/variables/search",
+    "description" : "",
+    "policies" : [ {
+      "name" : "Convert XML to JSON",
+      "description" : "The xml-to-json policy converts a request or response body from XML to JSON. This policy can be used to modernize APIs based on XML-only backend web services.",
+      "scope" : [ "OPERATION", "API" ],
+      "supportedScope" : [ "GLOBAL", "PRODUCT", "API", "OPERATION" ],
+      "section" : [ "INBOUND" ],
+      "supportedSection" : [ "INBOUND", "OUTBOUND", "ON_ERROR" ],
+      "useDefault" : false,
+      "policyElements" : [ {
+        "name" : "xml-to-json",
+        "description" : "The xml-to-json policy converts a request or response body from XML to JSON. This policy can be used to modernize APIs based on XML-only backend web services.",
+        "options" : [ ],
+        "multiple" : false,
+        "addablePolicies" : false,
+        "policyElementAttributes" : [ {
+          "name" : "kind",
+          "description" : "The attribute must be set to one of the following values./n- javascript-friendly - the converted JSON has a form friendly to JavaScript developers./n- direct - the converted JSON reflects the original XML document's structure.Policy expressions are allowed.",
+          "value" : "javascript-friendly",
+          "valueType" : "OPTIONS",
+          "options" : [ "javascript-friendly", "direct" ],
+          "defaultValue" : "javascript-friendly | direct"
+        }, {
+          "name" : "apply",
+          "description" : "The attribute must be set to one of the following values. /n - always - always apply conversion./n- content-type-xml - convert only if response Content-Type header indicates presence of XML./nPolicy expressions are allowed.",
+          "value" : "content-type-json",
+          "valueType" : "OPTIONS",
+          "options" : [ "always", "content-type-json" ],
+          "defaultValue" : "always | content-type-json"
+        }, {
+          "name" : "consider-accept-header",
+          "description" : "The attribute must be set to one of the following values.\n- true - apply conversion if JSON is requested in request Accept header.\n- false - always apply conversion.\nPolicy expressions are allowed.",
+          "value" : "true",
+          "valueType" : "OPTIONS",
+          "options" : [ "true", "false" ],
+          "defaultValue" : "true"
+        } ],
+        "policyElements" : [ ],
+        "requiredPolicyElements" : [ ],
+        "requiredPolicyElementAttributes" : [ "kind", "apply" ]
+      } ]
+    } ],
+    "tags" : [ ]
+  }, {
+    "name" : "getMetaData",
+    "displayName" : "getMetaData",
+    "method" : "get",
+    "urlTemplate" : "/metadata",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "createMetaData",
+    "displayName" : "createMetaData",
+    "method" : "put",
+    "urlTemplate" : "/metadata",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "searchForCertificates",
+    "displayName" : "searchForCertificates",
+    "method" : "get",
+    "urlTemplate" : "/certificates/search",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getCertificatesOverView",
+    "displayName" : "getCertificatesOverView",
+    "method" : "get",
+    "urlTemplate" : "/certificates/overview",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "search",
+    "displayName" : "search",
+    "method" : "get",
+    "urlTemplate" : "/search",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getRequestStatLogs",
+    "displayName" : "getRequestStatLogs",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}/requests/{requestId}/events/{eventId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getCollection",
+    "displayName" : "getCollection",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "deleteCollection",
+    "displayName" : "deleteCollection",
+    "method" : "delete",
+    "urlTemplate" : "/collections/{collectionId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "updateCollection",
+    "displayName" : "updateCollection",
+    "method" : "put",
+    "urlTemplate" : "/collections/{collectionId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "createRequest",
+    "displayName" : "createRequest",
+    "method" : "post",
+    "urlTemplate" : "/collections/{collectionId}/requests",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getRequests",
+    "displayName" : "getRequests",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}/requests",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getRequestSequence",
+    "displayName" : "getRequestSequence",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}/sequence",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "updateRequestSequence",
+    "displayName" : "updateRequestSequence",
+    "method" : "put",
+    "urlTemplate" : "/collections/{collectionId}/sequence",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "downloadCertificate",
+    "displayName" : "downloadCertificate",
+    "method" : "get",
+    "urlTemplate" : "/certificates/{cerName}/download",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getSlackChannelsWithMonitoringScope",
+    "displayName" : "getSlackChannelsWithMonitoringScope",
+    "method" : "get",
+    "urlTemplate" : "/collections/slackChannels",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getVariables",
+    "displayName" : "getVariables",
+    "method" : "get",
+    "urlTemplate" : "/variables/{variableid}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "deleteVariables",
+    "displayName" : "deleteVariables",
+    "method" : "delete",
+    "urlTemplate" : "/variables/{variableid}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "updateVariables",
+    "displayName" : "updateVariables",
+    "method" : "put",
+    "urlTemplate" : "/variables/{variableid}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getRequestStats",
+    "displayName" : "getRequestStats",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}/requests/{requestId}/schedulers/{schedulerId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getSchedulers",
+    "displayName" : "getSchedulers",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}/schedulers",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "createVariables",
+    "displayName" : "createVariables",
+    "method" : "post",
+    "urlTemplate" : "/variables",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getAllVariables",
+    "displayName" : "getAllVariables",
+    "method" : "get",
+    "urlTemplate" : "/variables",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getCollectionsVariable",
+    "displayName" : "getCollectionsVariable",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}/variables",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "createCollection",
+    "displayName" : "createCollection",
+    "method" : "post",
+    "urlTemplate" : "/collections",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getCollections",
+    "displayName" : "getCollections",
+    "method" : "get",
+    "urlTemplate" : "/collections",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getVariablesOverview",
+    "displayName" : "getVariablesOverview",
+    "method" : "get",
+    "urlTemplate" : "/variables/overview",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "createOrUpdateCertificate",
+    "displayName" : "createOrUpdateCertificate",
+    "method" : "post",
+    "urlTemplate" : "/certificates",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getCertificates",
+    "displayName" : "getCertificates",
+    "method" : "get",
+    "urlTemplate" : "/certificates",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getCertificate",
+    "displayName" : "getCertificate",
+    "method" : "get",
+    "urlTemplate" : "/certificates/{certName}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "deleteCertificate",
+    "displayName" : "deleteCertificate",
+    "method" : "delete",
+    "urlTemplate" : "/certificates/{certName}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "getRequest",
+    "displayName" : "getRequest",
+    "method" : "get",
+    "urlTemplate" : "/collections/{collectionId}/requests/{requestId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "deleteRequest",
+    "displayName" : "deleteRequest",
+    "method" : "delete",
+    "urlTemplate" : "/collections/{collectionId}/requests/{requestId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  }, {
+    "name" : "updateRequest",
+    "displayName" : "updateRequest",
+    "method" : "put",
+    "urlTemplate" : "/collections/{collectionId}/requests/{requestId}",
+    "description" : "",
+    "policies" : [ ],
+    "tags" : [ ]
+  } ],
+  "policies" : [ {
+    "name" : "Convert XML to JSON",
+    "description" : "The xml-to-json policy converts a request or response body from XML to JSON. This policy can be used to modernize APIs based on XML-only backend web services.",
+    "scope" : [ "OPERATION", "API" ],
+    "supportedScope" : [ "GLOBAL", "PRODUCT", "API", "OPERATION" ],
+    "section" : [ "INBOUND" ],
+    "supportedSection" : [ "INBOUND", "OUTBOUND", "ON_ERROR" ],
+    "useDefault" : false,
+    "policyElements" : [ {
+      "name" : "xml-to-json",
+      "description" : "The xml-to-json policy converts a request or response body from XML to JSON. This policy can be used to modernize APIs based on XML-only backend web services.",
+      "options" : [ ],
+      "multiple" : false,
+      "addablePolicies" : false,
+      "policyElementAttributes" : [ {
+        "name" : "kind",
+        "description" : "The attribute must be set to one of the following values./n- javascript-friendly - the converted JSON has a form friendly to JavaScript developers./n- direct - the converted JSON reflects the original XML document's structure.Policy expressions are allowed.",
+        "value" : "javascript-friendly",
+        "valueType" : "OPTIONS",
+        "options" : [ "javascript-friendly", "direct" ],
+        "defaultValue" : "javascript-friendly | direct"
+      }, {
+        "name" : "apply",
+        "description" : "The attribute must be set to one of the following values. /n - always - always apply conversion./n- content-type-xml - convert only if response Content-Type header indicates presence of XML./nPolicy expressions are allowed.",
+        "value" : "content-type-json",
+        "valueType" : "OPTIONS",
+        "options" : [ "always", "content-type-json" ],
+        "defaultValue" : "always | content-type-json"
+      }, {
+        "name" : "consider-accept-header",
+        "description" : "The attribute must be set to one of the following values.\n- true - apply conversion if JSON is requested in request Accept header.\n- false - always apply conversion.\nPolicy expressions are allowed.",
+        "value" : "true",
+        "valueType" : "OPTIONS",
+        "options" : [ "true", "false" ],
+        "defaultValue" : "true"
+      } ],
+      "policyElements" : [ ],
+      "requiredPolicyElements" : [ ],
+      "requiredPolicyElementAttributes" : [ "kind", "apply" ]
+    } ]
+  } ],
+  "buildProgress" : "SCHEDULED",
+  "connector" : {
+    "id" : "64355fa9d8a5933dd0567425",
+    "cts" : 1681219495811,
+    "createdUserName" : "sridhar sri",
+    "mts" : 1681285100593,
+    "connectorName" : "qa",
+    "host" : "apiwiz-qa.developer.azure-api.net",
+    "subscriptionId" : "39ad6429-6b72-4379-8a08-7188f5036608",
+    "resourceGroup" : "apiwiz",
+    "serviceName" : "apiwiz-qa"
+  },
+  "enableScmUpload" : true,
+  "scmUpload" : {
+    "repoName" : "repo",
+    "branch" : "master",
+    "hostUrl" : "https://github.com/vidya-bs/repo.git",
+    "folderName" : "azure_gateway",
+    "commitMessage" : "init",
+    "scmSource" : "git",
+    "username" : "vidya-bs",
+    "password" : "",
+    "authType" : "token"
+  }
+}
